@@ -8,13 +8,14 @@ import { DetailsComponent } from './pages/details/details.component';
 import { SharedModule } from './shared/shared.module';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { BookEffects } from './store/effects/book.effects';
 import { reducers } from './store';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddBookComponent } from './pages/add-book/add-book.component';
+import { AppInterceptor } from './interceptors/app.interceptor';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,13 @@ import { AddBookComponent } from './pages/add-book/add-book.component';
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([BookEffects])
   ],
-  providers: [],
+  providers: [
+    {
+      multi: true,
+      useClass: AppInterceptor,
+      provide: HTTP_INTERCEPTORS,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

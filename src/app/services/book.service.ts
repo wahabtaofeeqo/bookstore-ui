@@ -12,4 +12,8 @@ export class BookService {
   loadBooks(options: any) {
     return this.http.get(routes.books.get(options))
   }
+
+  add(payload: any) {
+    return this.http.post(routes.books.base, payload);
+  }
 }

@@ -33,7 +33,6 @@ export class RegisterComponent extends BaseComponent {
     this.processing = true
     const observable = this.service.register(this.form.value);
 
-    // New way
     observable.subscribe({
       next: this.handleNext,
       error: this.handleError

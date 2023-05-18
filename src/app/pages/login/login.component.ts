@@ -31,7 +31,6 @@ export class LoginComponent extends BaseComponent{
     this.processing = true
     const observable = this.service.login(this.form.value);
 
-    // New way
     observable.subscribe({
       next: this.handleNext,
       error: this.handleError
