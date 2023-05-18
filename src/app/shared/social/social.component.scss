@@ -1,0 +1,27 @@
+.icon {
+	background: #eee;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	padding-bottom: 15px;
+	justify-content: center;
+	border-radius: 50%;
+}
+
+.icon:hover {
+	opacity: 0.5;
+}
+
+.link .nav-item {
+	margin-bottom: 10px;
+}
+
+.link .nav-link {
+	color: black; 
+	font-size: 15px; 
+	display: flex; 
+	align-items: center;
+	padding: 0;
+}

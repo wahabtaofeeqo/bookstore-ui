@@ -1,0 +1,38 @@
+<div class="bg-light">
+  <app-navbar></app-navbar>
+</div>
+
+<div class="container py-5">
+  <h4>Book Title</h4>
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <img src="/assets/images/awaken.png" alt="">
+    </div>
+    <div class="col-md-6">
+      <h4>Book Title</h4>
+      <p class="text-muted">Wahab Taofeek</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate autem repellat, vitae sequi modi repudiandae maiores incidunt commodi unde consectetur dolorem odit laudantium.
+      </p>
+
+      <p>Price: $400</p>
+
+      <button class="btn btn-primary px-5">Add to cart</button>
+    </div>
+  </div>
+</div>
+
+<!-- Reviews -->
+<div class="container pb-5">
+  <h4 class="mb-5">Customers' Reviews</h4>
+  <div class="row">
+    <div *ngFor="let model of reviews" class="col-md-3">
+      <review></review>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="pt-5">
+  <app-footer></app-footer>
+</div>

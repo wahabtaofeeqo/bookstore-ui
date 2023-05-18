@@ -1,0 +1,24 @@
+<div class="container-fluid bg-light min-vh-100 d-flex align-items-center">
+  <div class="card col-md-4 mx-auto shadow-sm border-0">
+    <div class="card-body">
+      <h4 class="mb-4">Welcome back</h4>
+      <form [formGroup]="form" (ngSubmit)="process()">
+
+        <div class="mb-4">
+          <label for="email">Email</label>
+          <input type="text" formControlName="email" class="form-control" placeholder="john@yahoo.com">
+        </div>
+
+        <div class="mb-4">
+          <label for="password">Password</label>
+          <input type="text" formControlName="password" class="form-control" placeholder="Password">
+        </div>
+
+        <div>
+          <button class="btn btn-primary px-5" [disabled]="form.invalid || processing">
+            <i class="fa-solid fa-spinner fa-spin me-2" *ngIf="processing"></i> Submit </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

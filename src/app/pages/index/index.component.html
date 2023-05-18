@@ -1,0 +1,80 @@
+<div class="bg-light">
+  <app-navbar></app-navbar>
+
+  <div class="container">
+    <div class="row align-items-center hero">
+      <div class="col-md-6">
+        <h4 class="mb-5 title">What Book do you want to read today?</h4>
+        <p class="mb-5">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam vitae sed aliquam iusto aut maiores exercitationem adipisci alias numquam ipsa ab aperiam eveniet, doloribus modi molestias similique quidem sunt dolore?
+        </p>
+
+        <div class="search-box rounded">
+          <input type="text" class="" placeholder="Search Books...">
+          <button class="btn btn-primary px-4 rounded-0">Search</button>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <img src="/assets/images/awaken.png" alt="" style="width: 100%;">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sellers -->
+<div class="container py-5">
+  <h4 class="mb-5 text-center">Best Sellers' Books</h4>
+  <div class="row">
+    <div *ngFor="let book of books" class="col-md-3 mb-4">
+      <div class="card border-0 shadow-sm">
+        <a [routerLink]="'/books/' + book.id">
+          <img src="/assets/images/awaken.png" class="bg-light card-img-top pointr" height="200px" alt="Logo">
+        </a>
+        <div class="card-body">
+          <p class="mb-1">
+            <strong>Power of Money</strong>
+            <span class="float-end text-primary">$200</span>
+          </p>
+
+          <p>
+            lorem of all code is ipsum
+          </p>
+
+          <button (click)="addToCart(book)" class="btn btn-outline-primary btn-sm rounded-0">Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Caption -->
+<div class="container py-5">
+  <div class="row align-items-center bg-light">
+    <div class="col-md-6 px-0">
+      <img src="/assets/images/reader.jpeg" width="100%" alt="">
+    </div>
+    <div class="col-md-6 text-center">
+      <h4 class="h2 mb-4">We give you the best experience</h4>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio corporis quas vitae inventore dolorem? Necessitatibus repellendus ratione nemo dolorum odit obcaecati at tempore.
+      </p>
+      <button class="btn btn-primary rounded-0 px-5">Explore</button>
+    </div>
+  </div>
+</div>
+
+<!-- Reviews -->
+<div class="container py-5">
+  <h4 class="mb-5 text-center">Customers' Reviews</h4>
+  <div class="row">
+    <div *ngFor="let model of reviews" class="col-md-3">
+      <review></review>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="pt-5">
+  <app-footer></app-footer>
+</div>
